@@ -3,14 +3,15 @@ public class n1 {
     
 public static final int PASSWORD_LENGTH = 8;
 public static void main(String[] args) {
+    Character o = '_';
         Scanner input = new Scanner(System.in);
-        System.out.print("Input a password : ");
+        System.out.print("Введите пароль : ");
         
         String s = input.nextLine();
         if (is_Valid_Password(s)) {
-            System.out.println("Password is valid: " + s);
+            System.out.println("Пароль надежен: " + s);
         } else {
-            System.out.println("Not a valid password: " + s);
+            System.out.println("Пароль ненадежен " + s);
         }
     }
     public static boolean is_Valid_Password(String password) {
@@ -35,6 +36,7 @@ public static void main(String[] args) {
         return (ch >='0' && ch <='9');
     }
     public static boolean is_Symbol(char ch) {
-        return (ch ='_');
+        Character o = '_';
+        return (ch == o);
     }
 }

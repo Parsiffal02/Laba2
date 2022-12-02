@@ -1,9 +1,9 @@
     import java.util.Scanner;
-    public class n4 {
+    public class n11 {
         public static void main(final String ar[]) {
             String password;
             Scanner in = new Scanner(System.in);
-            System.out.println("Введите пароль");
+            System.out.print("Введите пароль: ");
             password = in.next();
             Character o = '_';
             boolean hasLetter = false;
@@ -15,9 +15,19 @@
             if (password.length() >= 8) {
                 for (int i = 0; i < password.length(); i++) {
                     char x = password.charAt(i);
-                    if (Character.isLetter(x) & (Character.isUpperCase(x) || Character.isLowerCase(x) )) {
+                    if (Character.isLetter(x) ) {
     
                         hasLetter = true;
+                    }
+                    else if (Character.isUpperCase(x)) {
+    
+                        hasLetter1 = true;
+                    
+                    }
+                    else if (Character.isLowerCase(x)) {
+    
+                        hasLetter2 = true;
+                    
                     }
     
                     else if (Character.isDigit(x)) {
@@ -25,14 +35,19 @@
                         hasDigit = true;
                     
                     }
+                    else if (x == o.charValue()) {
     
-                    if(hasLetter && hasDigit ){
+                        hasSymbol = true;
+                    
+                    }
+    
+                    if(hasLetter && hasDigit && hasLetter1 && hasLetter2 && hasSymbol){
     
                         break;
                     }
     
                 }
-                if (hasLetter && hasDigit  ) {
+                if (hasLetter && hasDigit && hasLetter1 && hasLetter2 && hasSymbol ) {
                     System.out.println("Сильный пароль");
                 } else {
                     System.out.println("Пароль ненадежен. Повторите ввод");
